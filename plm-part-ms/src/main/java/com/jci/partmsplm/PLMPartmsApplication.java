@@ -37,10 +37,7 @@ import com.jci.partmsplm.service.PLMPartMSService;
 import com.microsoft.azure.storage.StorageException;
 
 @RestController
-@Configuration
-@EnableAutoConfiguration
 @SpringBootApplication
-@EnableEurekaClient
 @EnableDiscoveryClient
 @EnableHystrix
 @EnableCircuitBreaker

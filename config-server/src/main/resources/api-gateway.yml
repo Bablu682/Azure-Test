@@ -1,0 +1,37 @@
+spring:
+  profiles:
+    active: development
+spring:
+  profiles: development
+server:
+  port: 8765
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types: application/xml,application/json
+zuul:
+  routes:
+    plm-bom-ms: /api/bom/**
+    plm-part-ms: /api/part/**
+  host:
+    connect-timeout-millis: 1000000
+    socket-timeout-millis: 6000000
+hystrix:
+  command.default.execution.isolation.strategy: THREAD
+  command.default.execution.isolation.thread.timeoutInMilliseconds: 600000
+  command.default.execution.timeout.enabled: false
+  command.default.fallback.enabled: false
+  threadpool.default.coreSize: 20
+po-service:
+  ribbon:
+    ReadTimeout: 600000
+    ConnectTimeout: 600000
+po-job:
+  ribbon:
+    ReadTimeout: 600000
+    ConnectTimeout: 600000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5

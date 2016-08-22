@@ -42,16 +42,10 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.ribbon.proxy.annotation.Hystrix;
 
 @RestController
-@Configuration
-@ComponentScan
 @SpringBootApplication
-@EnableEurekaClient
 @EnableDiscoveryClient
-@EnableAutoConfiguration
-
 @EnableHystrix
 @EnableCircuitBreaker
-
 @EnableHystrixDashboard
 
 public class PLMBommsApplication {
